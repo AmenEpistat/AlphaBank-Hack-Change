@@ -1,9 +1,17 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import React from 'react';
+import AuthEmployee from '../pages/AuthEmployee.tsx';
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: React.createElement(Navigate, { to: '/list', replace: true }),
+        element: React.createElement(Navigate, {
+            to: '/authEmployee',
+            replace: true,
+        }),
+    },
+    {
+        path: '/authEmployee',
+        element: React.createElement(AuthEmployee),
     },
 ]);
