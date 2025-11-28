@@ -44,11 +44,6 @@ export default [
                 },
             ],
 
-            'react/jsx-max-props-per-line': [
-                'error',
-                { maximum: 1, when: 'always' },
-            ],
-
             'react/self-closing-comp': 'error',
 
             'jsx-quotes': ['error', 'prefer-single'],

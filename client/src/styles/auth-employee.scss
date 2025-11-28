@@ -1,0 +1,55 @@
+@use './variables.scss' as *;
+
+.auth-employee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-employee__logo {
+  align-self: flex-start;
+}
+
+.auth-employee__card {
+  width: clamp(200px, 50%, 500px);
+}
+
+.auth-employee__button {
+  height: 50px;
+  font-size: 18px;
+  border-radius: 8px;
+  background: #000000;
+  border: none;
+
+  margin-bottom: 32px;
+}
+
+.auth-employee__button:disabled {
+  background-color:  rgba(38, 55, 88, 0.06);
+}
+
+.auth-employee__button:hover {
+  background-color: #332929 !important;
+}
+
+.auth-employee__info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-employee__input {
+  background-color: rgba(15, 25, 55, 0.1);
+  border: none !important;
+}
+
+.auth-employee__input:hover {
+background-color: rgba(38, 55, 88, 0.06) !important;
+  border: none !important;
+}
+
+.auth-employee__input:active {
+  background-color: #ffffff !important;
+  border: none !important;
+  outline: none !important;
+}
