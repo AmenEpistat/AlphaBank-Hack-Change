@@ -23,14 +23,14 @@ namespace AlphaOfferService.Models
             [
                 client.Age,
                 (float)client.Gender,
-                client.LogSalary6to12,
-                client.IsSalaryKnow ? 1.0f : 0.0f,
-                client.PerCapitaIncomeInRegion,
-                client.LogTurnOtherCrAvgAct,
+                client.AverageSalary,
+                client.IsSalaryKnown ? 1.0f : 0.0f,
+                client.AverageRegionIncomePerCapita,
+                client.AverageCurrentCreditTurnover,
                 client.IsNaTurnOtherCrAvgAct ? 1.0f : 0.0f,
-                client.TransactionCategorySupermarketPercentCnt,
-                client.LogTransactionCategoryRestaurantsSumAmt,
-                client.LogAvgByCategoryAmountSumCashflowcategoryName,
+                client.SupermarketTransactionCategoryPercent,
+                client.RestaurantTransactionCategoryPercent,
+                client.AverageMonthlyTravelCategoryTransactionAmountOverYear,
             ];
 
             DenseTensor<float> inputTensor = new(inputData, [1, inputData.Length]);

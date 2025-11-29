@@ -10,46 +10,46 @@ namespace AlphaOfferService.AlphaStructure.Entities
 
         public Gender Gender { get; }
 
-        public float LogSalary6to12 { get; }
+        public float AverageSalary { get; }
 
-        public bool IsSalaryKnow { get; }
+        public bool IsSalaryKnown { get; }
 
-        public float PerCapitaIncomeInRegion { get; }
+        public float AverageRegionIncomePerCapita { get; }
 
-        public float LogTurnOtherCrAvgAct { get; }
+        public float AverageCurrentCreditTurnover { get; }
 
         public bool IsNaTurnOtherCrAvgAct { get; }
 
-        public float TransactionCategorySupermarketPercentCnt { get; }
+        public float SupermarketTransactionCategoryPercent { get; }
 
-        public float LogTransactionCategoryRestaurantsSumAmt { get; }
+        public float RestaurantTransactionCategoryPercent { get; }
 
-        public float LogAvgByCategoryAmountSumCashflowcategoryName { get; }
+        public float AverageMonthlyTravelCategoryTransactionAmountOverYear { get; }
 
         public AlphaBankClient(
             string id,
             float age,
             Gender gender,
-            float logSalary6to12,
-            bool isSalaryKnow,
-            float perCapitaIncomeInRegion,
-            float logTurnOtherCrAvgAct,
+            float averageSalary,
+            bool isSalaryKnown,
+            float averageRegionIncomePerCapita,
+            float averageCurrentCreditTurnover,
             bool isNaTurnOtherCrAvgAct,
-            float transactionCategorySupermarketPercentCnt,
-            float logTransactionCategoryRestaurantsSumAmt,
-            float logAvgByCategoryAmountSumCashflowcategoryName)
+            float supermarketTransactionCategoryPercent,
+            float restaurantTransactionCategoryPercent,
+            float averageMonthlyTravelCategoryTransactionAmountOverYear)
         {
             Id = id;
             Age = age;
             Gender = gender;
-            LogSalary6to12 = logSalary6to12;
-            IsSalaryKnow = isSalaryKnow;
-            PerCapitaIncomeInRegion = perCapitaIncomeInRegion;
-            LogTurnOtherCrAvgAct = logTurnOtherCrAvgAct;
+            AverageSalary = averageSalary;
+            IsSalaryKnown = isSalaryKnown;
+            AverageRegionIncomePerCapita = averageRegionIncomePerCapita;
+            AverageCurrentCreditTurnover = averageCurrentCreditTurnover;
             IsNaTurnOtherCrAvgAct = isNaTurnOtherCrAvgAct;
-            TransactionCategorySupermarketPercentCnt = transactionCategorySupermarketPercentCnt;
-            LogTransactionCategoryRestaurantsSumAmt = logTransactionCategoryRestaurantsSumAmt;
-            LogAvgByCategoryAmountSumCashflowcategoryName = logAvgByCategoryAmountSumCashflowcategoryName;
+            SupermarketTransactionCategoryPercent = supermarketTransactionCategoryPercent;
+            RestaurantTransactionCategoryPercent = restaurantTransactionCategoryPercent;
+            AverageMonthlyTravelCategoryTransactionAmountOverYear = averageMonthlyTravelCategoryTransactionAmountOverYear;
         }
     }
 }

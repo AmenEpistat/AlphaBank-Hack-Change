@@ -8,20 +8,20 @@
 
         public Gender Gender { get; }
 
-        public float LogSalary6to12 { get; }
+        public float AverageSalary { get; }
 
-        public bool IsSalaryKnow { get; }
+        public bool IsSalaryKnown { get; }
 
-        public float PerCapitaIncomeInRegion { get; }
+        public float AverageRegionIncomePerCapita { get; }
 
-        public float LogTurnOtherCrAvgAct { get; }
+        public float AverageCurrentCreditTurnover { get; }
 
         public bool IsNaTurnOtherCrAvgAct { get; }
 
-        public float TransactionCategorySupermarketPercentCnt { get; }
+        public float SupermarketTransactionCategoryPercent { get; }
 
-        public float LogTransactionCategoryRestaurantsSumAmt { get; }
+        public float RestaurantTransactionCategoryPercent { get; }
 
-        public float LogAvgByCategoryAmountSumCashflowcategoryName { get; }
+        public float AverageMonthlyTravelCategoryTransactionAmountOverYear { get; }
     }
 }
