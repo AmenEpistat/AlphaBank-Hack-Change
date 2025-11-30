@@ -1,4 +1,4 @@
-﻿using AlphaOfferService.AlphaStructure.Clients;
+using AlphaOfferService.AlphaStructure.Clients;
 using AlphaOfferService.Core;
 using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntime.Tensors;
@@ -23,11 +23,11 @@ namespace AlphaOfferService.Models
             [
                 client.Age,
                 (float)client.Gender,
-                client.AverageSalary,
+                client.LogSalary6to12mAgg,
                 client.IsSalaryKnown ? 1.0f : 0.0f,
-                client.AverageRegionIncomePerCapita,
-                client.AverageCurrentCreditTurnover,
-                client.IsNaTurnOtherCrAvgAct ? 1.0f : 0.0f,
+                client.PerCapitaIncomeRurAmt,
+                client.LogTotalRurAmtCmAvg,
+                client.LogTurnCurCrAvgActV2,
                 client.SupermarketTransactionCategoryPercent,
                 client.RestaurantTransactionCategoryPercent,
                 client.AverageMonthlyTravelCategoryTransactionAmountOverYear,

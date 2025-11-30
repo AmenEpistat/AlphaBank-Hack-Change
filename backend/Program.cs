@@ -35,9 +35,21 @@ namespace AlphaOfferService
                 );
 
                 Log.Information("Начато создание модели для определения дохода клиента");
-                var modelPath = Path.Combine(AppContext.BaseDirectory, "model.onnx");
-                builder.Services.AddSingleton<IIncomeModel>(new MarkModel(modelPath));
-                Log.Information("Создана модель для определения дохода клиента: {ModelPath}", modelPath);
+                
+                var modelType = builder.Configuration.GetValue<string>("ModelType") ?? "onnx";
+                
+                if (modelType.Equals("catboost", StringComparison.OrdinalIgnoreCase))
+                {
+                    var catBoostModelPath = Path.Combine(AppContext.BaseDirectory, "model.cbm");
+                    builder.Services.AddSingleton<IIncomeModel>(new CatBoostModel(catBoostModelPath));
+                    Log.Information("Создана CatBoost модель для определения дохода клиента: {ModelPath}", catBoostModelPath);
+                }
+                else
+                {
+                    var modelPath = Path.Combine(AppContext.BaseDirectory, "model.onnx");
+                    builder.Services.AddSingleton<IIncomeModel>(new MarkModel(modelPath));
+                    Log.Information("Создана ONNX модель для определения дохода клиента: {ModelPath}", modelPath);
+                }
 
                 var clientDbPath = Path.Combine(AppContext.BaseDirectory, "alphabase.sqlite");
                 builder.Services.AddDbContext<AlphaBankRepository>(options =>

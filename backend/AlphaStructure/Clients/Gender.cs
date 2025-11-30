@@ -1,4 +1,4 @@
-﻿namespace AlphaOfferService.AlphaStructure.Clients
+namespace AlphaOfferService.AlphaStructure.Clients
 {
     public enum Gender
     {
