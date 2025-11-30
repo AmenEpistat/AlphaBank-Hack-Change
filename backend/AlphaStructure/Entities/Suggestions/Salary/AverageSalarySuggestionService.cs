@@ -1,4 +1,4 @@
-﻿using AlphaOfferService.AlphaStructure.Clients;
+using AlphaOfferService.AlphaStructure.Clients;
 using AlphaOfferService.AlphaStructure.Services.Suggestions;
 
 namespace AlphaOfferService.AlphaStructure.Entities.Suggestions.Salary
@@ -13,7 +13,7 @@ namespace AlphaOfferService.AlphaStructure.Entities.Suggestions.Salary
 
         public override async Task<List<SalarySuggestion>> SelectSuggestionsForClient(IClient client, List<SalarySuggestion> suggestions)
         {
-            return [.. suggestions.Where(s => Math.Exp(client.AverageSalary) - 1 < MinimalSalary)];
+            return [.. suggestions.Where(s => Math.Exp(client.LogSalary6to12mAgg) - 1 < MinimalSalary)];
         }
     }
 

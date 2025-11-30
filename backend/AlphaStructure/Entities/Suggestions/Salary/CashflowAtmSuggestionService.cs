@@ -1,4 +1,4 @@
-﻿using AlphaOfferService.AlphaStructure.Clients;
+using AlphaOfferService.AlphaStructure.Clients;
 using AlphaOfferService.AlphaStructure.Services.Suggestions;
 
 namespace AlphaOfferService.AlphaStructure.Entities.Suggestions.Salary
@@ -13,7 +13,7 @@ namespace AlphaOfferService.AlphaStructure.Entities.Suggestions.Salary
 
         public override async Task<List<CashflowAtmSuggestion>> SelectSuggestionsForClient(IClient client, List<CashflowAtmSuggestion> suggestions)
         {
-            return [.. suggestions.Where(s => Math.Exp(client.AverageCashflowAtms) - 1 > MedianSalaryAmount)];
+            return [.. suggestions.Where(s => Math.Exp(client.LogSalary6to12mAgg) - 1 > MedianSalaryAmount)];
         }
     }
 
